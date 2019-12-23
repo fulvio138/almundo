@@ -1,0 +1,174 @@
+
+    <div class="title-filters">Filtros</div>
+    <div class="title-filters-container">
+        <ngb-accordion class="mobileShow">
+            <ngb-panel id="filter-title-mobile">
+                <ng-template ngbPanelHeader let-opened="opened">
+                    <div class="d-flex align-items-center justify-content-between">                         
+                        <span class="filter-title-by-name-ppal">Filtrar</span> 
+                        <span class="m-0"></span>                         
+                        <button ngbPanelToggle class="btn btn-link p-0">
+                            <img *ngIf="opened; else downArrow" class="icon-filters" src="../../../assets/icons/filters/up-arrow.svg">
+                            <ng-template #downArrow>
+                                <img class="icon-filters" src="../../../assets/icons/filters/down-arrow.svg">
+                            </ng-template>
+                        </button>
+                    </div>
+                </ng-template>
+                <ng-template ngbPanelContent> 
+                    <div class="content-panel">
+                        <ngb-accordion #acc="ngbAccordion" [activeIds]="activeIds">
+                            <ngb-panel  id="ngb-panel-0">
+                                <ng-template class="fitlters-background" ngbPanelHeader let-opened="opened">
+                                    <div class="d-flex align-items-center justify-content-between"> 
+                                        <span class="icon-margin-right">
+                                            <img class="blue-search" src="../../../assets/icons/filters/blue-search.svg">
+                                        </span>   
+                                        <span class="filter-title-by-name">Nombre del Hotel</span> 
+                                        <span class="m-0"></span>                         
+                                        <button ngbPanelToggle class="btn btn-link p-0">
+                                            <img *ngIf="opened; else downArrow" class="icon-filters" src="../../../assets/icons/filters/up-arrow.svg">
+                                            <ng-template #downArrow>
+                                                <img class="icon-filters" src="../../../assets/icons/filters/down-arrow.svg">
+                                            </ng-template>
+                                        </button>
+                                    </div>
+                                </ng-template> 
+                                <ng-template ngbPanelContent>                    
+                                    <div class="container">
+                                        <div class="row">         
+                                            <div class="col-xs-6">
+                                                <input type="text" 
+                                                        class="input-sm" 
+                                                        [formControl]="searchHotel" 
+                                                        spellcheck="false" 
+                                                        placeholder="Ingrese el nombre del hotel">
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <button type="button"  
+                                                        (click)="searchHotelByName()"                                
+                                                        class="btn btn-sm btn-aceptar">Aceptar
+                                                </button>
+                                            </div>           
+                                        </div>
+                                    </div>              
+                                </ng-template>
+                            </ngb-panel>
+                            <ngb-panel  class="fitlters-background" id="ngb-panel-1">
+                                <ng-template ngbPanelHeader let-opened="opened">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="icon-margin-right">
+                                            <img class="blue-star" src="../../../assets/icons/filters/blue-star.svg">
+                                        </span>
+                                        <span class="filter-title-by-stars">Estrellas</span>
+                                        <span class="m-0"></span>
+                                        <button ngbPanelToggle class="btn btn-link p-0">
+                                            <img *ngIf="opened; else downArrow" class="icon-filters" src="../../../assets/icons/filters/up-arrow.svg">
+                                            <ng-template #downArrow>
+                                                <img class="icon-filters" src="../../../assets/icons/filters/down-arrow.svg">
+                                            </ng-template>
+                                        </button>
+                                    </div>
+                                </ng-template>            
+                                <ng-template ngbPanelContent>                    
+                                    <form [formGroup]="myForm">                         
+                                        <label class="label-filter">
+                                            <input class="input-filters" 
+                                                    (change)="onChange(0, $event.target.checked)"
+                                                    id="allStars"
+                                                    type="checkbox">
+                                            <span class="chk-all-stars">Todas las Estrellas</span> 
+                                        </label>            
+                                        <div *ngFor="let data of stars_array; let i = index">
+                                            <label class="label-filter">
+                                                <input class="input-filters"
+                                                    #checkboxes 
+                                                    type="checkbox"                            
+                                                    (change)="onChange(data.stars, $event.target.checked)">
+                                                <img *ngFor='let loopStars of counter(5-i)' class="yellow-star" src="../../../assets/icons/filters/star.svg">
+                                            </label>    
+                                        </div>
+                                    </form>                               
+                                </ng-template>
+                            </ngb-panel>                
+                        </ngb-accordion>
+                    </div>
+                </ng-template>
+            </ngb-panel>
+        </ngb-accordion>
+    </div>    
+    <ngb-accordion class="desktopShow" #acc="ngbAccordion" [activeIds]="activeIds">
+        <ngb-panel  id="ngb-panel-0">
+            <ng-template class="fitlters-background" ngbPanelHeader let-opened="opened">
+                <div class="d-flex align-items-center justify-content-between"> 
+                    <span class="icon-margin-right">
+                        <img class="blue-search" src="../../../assets/icons/filters/blue-search.svg">
+                    </span>   
+                    <span class="filter-title-by-name">Nombre del Hotel</span> 
+                    <span class="m-0"></span>                         
+                    <button ngbPanelToggle class="btn btn-link p-0">
+                        <img *ngIf="opened; else downArrow" class="icon-filters" src="../../../assets/icons/filters/up-arrow.svg">
+                        <ng-template #downArrow>
+                            <img class="icon-filters" src="../../../assets/icons/filters/down-arrow.svg">
+                        </ng-template>
+                    </button>
+                </div>
+            </ng-template> 
+            <ng-template ngbPanelContent>                    
+                <div class="container">
+                    <div class="row">         
+                        <div class="col-xs-6">
+                            <input type="text" 
+                                    class="input-sm" 
+                                    [formControl]="searchHotel" 
+                                    spellcheck="false" 
+                                    placeholder="Ingrese el nombre del hotel">
+                        </div>
+                        <div class="col-xs-6">
+                            <button type="button"  
+                                    (click)="searchHotelByName()"                                
+                                    class="btn btn-sm btn-aceptar">Aceptar
+                            </button>
+                        </div>           
+                    </div>
+                </div>              
+            </ng-template>
+        </ngb-panel>
+        <ngb-panel  class="fitlters-background" id="ngb-panel-1">
+            <ng-template ngbPanelHeader let-opened="opened">
+                <div class="d-flex align-items-center justify-content-between">
+                    <span class="icon-margin-right">
+                        <img class="blue-star" src="../../../assets/icons/filters/blue-star.svg">
+                    </span>
+                    <span class="filter-title-by-stars">Estrellas</span>
+                    <span class="m-0"></span>
+                    <button ngbPanelToggle class="btn btn-link p-0">
+                        <img *ngIf="opened; else downArrow" class="icon-filters" src="../../../assets/icons/filters/up-arrow.svg">
+                        <ng-template #downArrow>
+                            <img class="icon-filters" src="../../../assets/icons/filters/down-arrow.svg">
+                        </ng-template>
+                    </button>
+                </div>
+            </ng-template>            
+            <ng-template ngbPanelContent>                    
+                <form [formGroup]="myForm">                         
+                    <label class="label-filter">
+                        <input class="input-filters" 
+                                (change)="onChange(0, $event.target.checked)"
+                                id="allStars"
+                                type="checkbox">
+                        <span class="chk-all-stars">Todas las Estrellas</span> 
+                    </label>            
+                    <div *ngFor="let data of stars_array; let i = index">
+                        <label class="label-filter">
+                            <input class="input-filters"
+                                #checkboxes 
+                                type="checkbox"                            
+                                (change)="onChange(data.stars, $event.target.checked)">
+                            <img *ngFor='let loopStars of counter(5-i)' class="yellow-star" src="../../../assets/icons/filters/star.svg">
+                        </label>    
+                    </div>
+                </form>                               
+            </ng-template>
+        </ngb-panel>                
+    </ngb-accordion>

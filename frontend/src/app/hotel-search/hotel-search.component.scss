@@ -1,0 +1,118 @@
+.title-filters{
+    margin-bottom: 5px;
+    padding: 5px 5px 5px 10px;
+    border-radius: 1px;
+    box-shadow: 0 0 1px;
+    font-weight: 600;
+}
+.fitlters-background{
+    background: #ffffff;
+}
+.filter-byName{
+    margin-bottom: 5px;
+    padding: 5px 5px 5px 10px;
+    border-radius: 1px;
+    box-shadow: 0 0 2px;
+    background: #ffffff;
+}
+.filter-byStars{
+    margin-bottom: 5px;
+    padding: 5px 5px 5px 10px;
+    border-radius: 1px;
+    box-shadow: 0 0 2px;
+    background: #ffffff;
+}
+.btn-aceptar{
+    background-color: #023678; 
+    color: #ffffff; 
+    font-weight: 600;
+}
+.filter-title-by-name{
+    color:#1975AA; 
+    font-weight: bold;
+    margin-right: 30px;
+    font-size: 14px;
+}
+.filter-title-by-stars{
+    color:#1975AA; 
+    font-weight: bold;
+    margin-right: 100px;
+    font-size: 14px;
+}
+.icon-margin-right{
+    margin-right: 7px;
+}
+.blue-search{
+    width: 15px; 
+}
+.blue-star{
+    width: 15px;
+    margin-bottom: 4px;
+}
+.yellow-star{
+    width: 16px;
+    margin-bottom: 5px;
+}
+.label-filter{
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom:0; 
+    cursor: pointer;
+}
+.input-filters{
+    margin-right: 10px;
+    margin-right: 10px;
+}
+.chk-all-stars{
+    margin-bottom: 5px;
+}
+.input-sm{
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+.icon-filters{
+    width: 12px;
+}
+.mobileShow {
+    display: none;
+}
+.title-filters-container{
+    width: 377px;margin-left: -15px;
+}
+
+@media (max-width: 1024px) { 
+    .mobileShow {display: block;}
+    .title-filters{display: none;}
+    .desktopShow{display: none;}
+    .input-sm{
+        margin-bottom: 5px;
+        margin-right: 10px;
+        margin-top: 1px;
+    }
+    .title-filters-container{
+        width: 362px;margin-left: -15px;margin-top: -20px;
+    }
+    .filter-title-by-name-ppal{
+        color:#1975AA; 
+        font-weight: bold;
+        margin-left: 130px;
+        font-size: 18px;
+    }
+    .filter-title-by-name{
+        color:#1975AA; 
+        font-weight: bold;
+        margin-right: 158px;
+        font-size: 14px;
+    }
+    .filter-title-by-stars{
+        color:#1975AA; 
+        font-weight: bold;
+        margin-right: 225px;
+        font-size: 14px;
+    }
+    .content-panel{
+        width: 356px;
+        margin-left: -18px;
+        margin-top: -12px;
+    }
+ }

@@ -1,0 +1,36 @@
+<div class="row hotel-container" 
+    *ngFor="let hotel of hotels$ | async | filter:searchHotel | filterStars:searchHotelByStars"
+    [class.selected]="hotel.id === selectedId">
+    <div hidden class="col">{{ hotel.id }}</div>
+    <!--Hotel Image-->
+    <div class="col-md col-xs nopadding">
+        <img class="hotel-img" src="../../../assets/images/hotels/{{ hotel.image }}">
+    </div>
+    <!--Hotel Info-->
+    <div class="col-md col-xs hotel-info">                        
+        <div class="hotel-name">
+            <span>{{ hotel.name }}</span>
+        </div>
+        <span *ngFor='let loopStars of counter(hotel.stars)'>                           
+            <img class="hotel-stars-amenities" src="../../../assets/icons/filters/star.svg">                            
+        </span>
+        <div>
+            <span class="hotel-amenities" *ngFor="let amenity of hotel.amenities">
+                <img class="hotel-stars-amenities" src="../../../assets/icons/amenities/{{amenity}}.svg">
+            </span>
+        </div>
+    </div> 
+    <!--Hotel Pricebox-->                                      
+    <div class="col-md col-xs">
+        <div class="price-box">
+            <div class="price-box-title">
+                Precio por noche por habitación
+            </div>
+            <div class="price">
+                <span class="price-currency">ARS</span>
+                <span class="price-total">{{ hotel.price }}</span>
+            </div>
+            <button type="button" class="btn hotel-detail-btn">Ver hotel</button>
+        </div>
+    </div>            
+</div>

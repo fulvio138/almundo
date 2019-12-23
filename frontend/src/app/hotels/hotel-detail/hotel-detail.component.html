@@ -1,0 +1,25 @@
+<h2>DETALLE HOTEL</h2>
+<div *ngIf="hotel$ | async as hotel">
+  <h3>"{{ hotel.name }}"</h3>
+  <div>
+    <label>Id: </label>{{ hotel.id }}</div>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="hotel.name" placeholder="name"/>
+  </div>
+  <div>
+    <label>Stars: </label>
+    <input [(ngModel)]="hotel.stars" placeholder="stars"/>
+  </div>
+  <div>
+    <label>Price: </label>
+    <input [(ngModel)]="hotel.price" placeholder="price"/>
+  </div>
+  <div>
+    <label>Image: </label>
+    <input [(ngModel)]="hotel.image" placeholder="image"/>
+  </div>
+  <p>
+    <button>Back</button>
+  </p>
+</div>

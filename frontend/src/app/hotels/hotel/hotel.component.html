@@ -1,0 +1,17 @@
+<main>
+    <div class="container">
+        <div class="row logo-almundo">
+            <span>
+                <img class="logo-almundo-img" src="../../../assets/images/logo-almundo.svg">
+            </span>
+        </div>
+        <div class="row container-hotels">
+            <div class="col-md-3 col-xs">
+                <app-hotel-search (searchHotel)="handleSearch($event)" (searchHotelByStars)="handleSearchByStars($event)"></app-hotel-search>
+            </div>
+            <div class="col-md-9 col-xs">
+                <app-hotel-list [searchHotel]="filter_name_hotel" [searchHotelByStars]="filter_array_stars"></app-hotel-list>
+            </div>
+        </div>        
+    </div>
+</main>
