@@ -1,5 +1,5 @@
-# almundo
-examen front
+# Almundo
+Examen front.
 
 ## Development server
 Run `ng serve` for a dev server, in frontend folder. Navigate to `http://localhost:4200/`. 
